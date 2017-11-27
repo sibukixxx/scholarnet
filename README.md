@@ -1,8 +1,8 @@
 # スカラネットスクショくん
 日本学生支援機構の奨学金情報Webサイト  
 "スカラネット"
-(https://scholar-ps.sas.jasso.go.jp/mypage/)で,  
-返済状況に関するページをスクショして保存するというものです。  
+(https://scholar-ps.sas.jasso.go.jp/mypage/) で,  
+返還状況のページをスクショして保存するというものです。  
 
 ## 環境
 - Python 3.6
