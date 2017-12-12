@@ -25,10 +25,10 @@ class Scholarnet:
             driver.find_element_by_id("login_open_password").send_keys(profile["pass"])
             driver.find_element_by_id("login_open_login_submit").click()
             # 奨学生番号の入力
-            driver.find_element_by_id("syogkseiBgKakunin_open_syogkseiBg1").send_keys(profile["num1"])
+            driver.find_element_by_id("syogkseiBgKakunin_open_syogkseiBg1").send_keys(profile["univ"]["num1"])
             select = Select(driver.find_element_by_id("syogkseiBgKakunin_open_syogkseiBg2"))
-            select.select_by_visible_text(profile["num2"])
-            driver.find_element_by_id("syogkseiBgKakunin_open_syogkseiBg3").send_keys(profile["num3"])
+            select.select_by_visible_text(profile["univ"]["num2"])
+            driver.find_element_by_id("syogkseiBgKakunin_open_syogkseiBg3").send_keys(profile["univ"]["num3"])
             driver.find_element_by_id("syogkseiBgKakunin_submit_button").click()
             print("ログイン完了しました.")
         except:
@@ -39,7 +39,7 @@ class Scholarnet:
         html_top = driver.page_source
 
         # 詳細ページの取得
-        num = "%s%s%s" % (str(profile["num1"]), str(profile["num2"]), str(profile["num3"]))
+        num = "%s%s%s" % (str(profile["univ"]["num1"]), str(profile["univ"]["num2"]), str(profile["univ"]["num3"]))
         element = driver.find_element_by_xpath("//input[@value=%s]" % num)
         element.click()
         html_univ = driver.page_source
